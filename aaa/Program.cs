@@ -1,9 +1,11 @@
 ﻿int Fill_Array (int [] array_fill, int min) 
 {
     int length = array_fill.Length;
-    for(int i=0; i < length; i++)
+    for(int i=0; i < length; i++)// Можешь сразу написать for(int i=min; i < array_fill.Length; i++), 
+        //что бы не создавать перемнные, которые будут занимать местов память (это я про переменную length)
+        
     {
-        array_fill[i] = min + 1;
+        array_fill[i] = min + 1;//так как в for(int i=min; i < array_fill.Length; i++) можно прописать int i = min, то счет начнется с min, можно просто написать array_fill[i] = i
     }
     return array_fill;
 }
