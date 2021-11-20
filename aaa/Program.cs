@@ -1,18 +1,14 @@
 ﻿ int Fill_Array (int[] array_fill, int min) 
 {
-    int length = array_fill.Length;
-    int i = 0;
-    while (i<length)
+    for ( int i = min; y < array_fill.Length; i++)
     {
-        array_fill[i] = min + i;
-        i++;
+        array_fill[i] = i;
     } 
     return array_fill[i];
 }
 void Print_Array(int[] array_print)
 {
-    int length_print = array_print.Length;
-    for(int j = 0; j < length_print; j++)
+    for(int j = 0; j < array_print.Length; j++)
     {
         Console.Write($"{array_print[j]}");
     }
@@ -20,17 +16,15 @@ void Print_Array(int[] array_print)
 Console.Clear();
 int[] number = new int [1000];
 int min_Value = 6;
-Fill_Array(number, min_Value);
-int b = 0;
-while ( (number[b] * number[b]) < number.Length)
-{
-    for (int c = 0; b <= number.Length; c++)
+number = Fill_Array(number, min_Value);
+    for (int i = 0; i <= number.Length; i++)
     {
-        if (number[b] == 2 || number[b] == 3 || number[b] == 5 || number[b] == 7)
+        if (number[i] == 2 || number[i] == 3 || number[i] == 5 || number[i] == 7)
         {
-        System.Console.WriteLine($"Это простое число: {number[b]}");
-        b++;
+        Console.WriteLine($"Это простое число: {number[i]}");
         } 
-    }
-}
+        if (number[i] %2 != 0 || number[i] %3 !=0 || number[i] %5 !=0 || number[i] %7 !=0)
+        {
+        Console.WriteLine($"Это простое число: {number[i]}");
+        }
 Print_Array(number);
